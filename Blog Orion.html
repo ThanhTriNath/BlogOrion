@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog • Orion </title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;600;400&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="Orion1.png" type="image/jpeg">
+    <meta name="theme-color" content="#181636">
+    <style>
+        :root {
+            --primary: #181636;
+            --secondary: #6b79ff;
+            --accent: #fbb13c;
+            --bg: linear-gradient(120deg, #1b1c38 0%, #22254a 100%);
+            --bg2: linear-gradient(120deg, #151729 0%, #23264f 100%);
+            --white: #fff;
+            --shadow: 0 2px 28px rgba(79,140,255,0.13), 0 0.5px 5px #6b79ff27;
+            --radius: 22px;
+            --glass: rgba(255,255,255,0.11);
+        }
+        body {
+            margin: 0;
+            font-family: 'Roboto', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--white);
+            min-height: 100vh;
+            letter-spacing: 0.1px;
+        }
+        /* --- HEADER HERO --- */
+        header {
+            background: var(--bg2);
+            box-shadow: var(--shadow);
+            position: sticky; top: 0; z-index: 20;
+        }
+        .header-content {
+            max-width: 1080px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            padding: 1.1rem 1.3rem 0.8rem 1.3rem;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            background: #22264a;
+            border-radius: 18px;
+            padding: 0.4rem 1rem 0.4rem 0.4rem;
+            box-shadow: 0 4px 24px #6b79ff1a;
+        }
+        .logo img {
+            height: 48px; width: 48px;
+            border-radius: 13px;
+            margin-right: 1.1em;
+            background: #fff;
+        }
+        .title-block h1 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin: 0;
+            font-weight: 800;
+            letter-spacing: 2.2px;
+            text-shadow: 0 4px 18px #6b79ff36;
+        }
+        .title-block p {
+            font-size: 1.19rem;
+            color: #d0d3fe;
+            margin: 3px 0 0 0;
+            font-style: italic;
+            letter-spacing: 1px;
+        }
+        /* --- NAVIGATION --- */
+        nav {
+            margin: 0 auto;
+            max-width: 1050px;
+            background: var(--glass);
+            border-radius: 0 0 var(--radius) var(--radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 2rem;
+            margin: 0; padding: 0.4em 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .menu li a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.15rem;
+            padding: 0.7em 1.3em;
+            border-radius: 15px;
+            transition: background 0.18s, color 0.18s, transform 0.2s;
+            position: relative;
+        }
+        .menu li a:hover,
+        .menu li a:focus {
+            background: var(--secondary);
+            color: var(--accent);
+            transform: scale(1.08);
+            box-shadow: 0 2px 12px #6b79ff55;
+        }
+        /* --- HERO BANNER --- */
+        .hero {
+            text-align: center;
+            background: linear-gradient(125deg, #22254a 60%, #6b79ff22 100%);
+            border-radius: var(--radius);
+            margin: 2.2rem auto 2.7rem auto;
+            max-width: 1000px;
+            padding: 2.7rem 1.3rem 2.4rem 1.3rem;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        .hero h2 {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 2.6rem;
+            color: var(--accent);
+            margin: 0 0 0.7em 0;
+            letter-spacing: 1.5px;
+        }
+        .hero p {
+            font-size: 1.29rem;
+            color: #e3e6ff;
+            margin: 0 0 1.3em 0;
+        }
+        .hero .cta {
+            background: var(--secondary);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.17rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 700;
+            padding: 1em 2.2em;
+            margin-top: 1.2rem;
+            box-shadow: 0 4px 18px #6b79ff55;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.22s, box-shadow 0.22s, transform 0.14s;
+        }
+        .hero .cta:hover, .hero .cta:focus {
+            background: var(--accent);
+            color: var(--primary);
+            box-shadow: 0 8px 32px #fbb13c77;
+            transform: scale(1.07);
+        }
+        /* --- ANNONCES --- */
+        section {
+            max-width: 1000px;
+            margin: 2.2rem auto 2.2rem auto;
+            padding: 2rem 1.5rem;
+            background: #191b34c9;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        section h2 {
+            color: var(--accent);
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 1.2rem;
+            border-left: 10px solid var(--secondary);
+            padding-left: 0.7em;
+            letter-spacing: 1.3px;
+        }
+        .annonces {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+        .annonce {
+            background: linear-gradient(100deg, #23264f 70%, #6b79ff11 100%);
+            border-left: 8px solid var(--secondary);
+            padding: 1.2rem 2rem 1rem 1.3rem;
+            border-radius: 13px;
+            box-shadow: 0 3px 18px #6b79ff11;
+            transition: box-shadow 0.2s, background 0.2s;
+            position: relative;
+        }
+        .annonce-title {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 1.17em;
+            font-weight: 700;
+            color: #fbb13c;
+            margin-bottom: 0.7em;
+            display: flex; align-items: center;
+        }
+        .annonce-title::before {
+            content: '🪐';
+            margin-right: 0.6em;
+            font-size: 1.3em;
+            opacity: .85;
+        }
+        /* --- Rubriques stylées --- */
+        .rubriques {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.2rem;
+        }
+        .rubrique {
+            flex: 1 1 320px;
+            background: linear-gradient(120deg, #242759 0%, #303468 100%);
+            padding: 1.3rem 1.3rem 1.1rem 1.3rem;
+            border-radius: 13px;
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--secondary);
+            border-bottom: 4px solid var(--accent);
+            min-width: 240px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .rubrique:hover {
+            transform: translateY(-8px) scale(1.04);
+            box-shadow: 0 8px 32px #6b79ff33;
+        }
+        .rubrique h3 {
+            color: var(--accent);
+            margin-top: 0;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+        .rubrique ul { padding-left: 1.2em; margin: 0.5em 0; }
+        /* --- Timeline stylée --- */
+        .timeline {
+            position: relative;
+            margin: 2.8rem auto 2rem auto;
+            max-width: 820px;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, #6b79ff 40%, #fbb13c 100%);
+            border-radius: 2px;
+        }
+        .timeline-event {
+            position: relative;
+            margin-bottom: 2.2rem;
+            padding-left: 50px;
+            min-height: 58px;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 8px;
+            top: 10px;
+            width: 28px;
+            height: 28px;
+            background: var(--white);
+            border: 5px solid var(--secondary);
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 2px 12px #6b79ff33;
+        }
+        .timeline-event h4 {
+            margin: 0 0 0.2em 0;
+            font-size: 1.08rem;
+            color: var(--accent);
+            font-family: 'Montserrat', Arial, sans-serif;
+        }
+        .timeline-event .timeline-date {
+            font-size: 0.92rem;
+            color: #b5bbef;
+            margin-bottom: 0.22em;
+            font-style: italic;
+        }
+        .timeline-event p {
+            margin: 0 0 0.2em 0;
+            color: #e5e8ff;
+        }
+        /* --- Equipe stylée --- */
+        .personnes {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.1rem;
+            margin-top: 1.1rem;
+        }
+        .personne {
+            background: linear-gradient(120deg, #262a5f 0%, #2331a6 100%);
+            padding: 1.1rem 0.9rem 1rem 0.9rem;
+            border-radius: 13px;
+            flex: 1 1 210px;
+            box-shadow: 0 2px 12px #6b79ff13;
+            text-align: center;
+            transition: box-shadow 0.19s, transform 0.18s;
+            min-width: 180px; max-width: 260px;
+            border-bottom: 5px solid var(--secondary);
+        }
+        .personne:hover {
+            box-shadow: 0 7px 22px #6b79ff33;
+            transform: translateY(-7px) scale(1.05);
+        }
+        .personne img {
+            border-radius: 50%;
+            width: 82px; height: 82px; object-fit: cover;
+            margin-bottom: 0.5rem;
+            border: 3px solid var(--accent);
+            box-shadow: 0 2px 10px #fbb13c22;
+        }
+        .personne strong {
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 1.07em;
+            color: var(--white);
+        }
+        .personne div:last-child { color: #b5bbef; font-size: 1em; }
+        /* --- Footer stylé --- */
+        footer {
+            background: #181636;
+            color: #b5bbef;
+            font-size: 1rem;
+            font-family: 'Montserrat', Arial, sans-serif;
+            text-align: center;
+            padding: 1.1rem 0 1.2rem 0;
+            margin-top: 2rem;
+            border-top-left-radius: 14px;
+            border-top-right-radius: 14px;
+            box-shadow: 0 -2px 16px #6b79ff22;
+        }
+        footer .footer-content {
+            max-width: 1050px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 0 1.2rem;
+        }
+        footer .footer-logo {
+            display: flex; align-items: center;
+        }
+        footer .footer-logo img {
+            height: 36px; width: 36px; object-fit: contain;
+            border-radius: 8px; background: #fff; box-shadow: 0 2px 8px #6b79ff26; margin-right: 0.5em;
+        }
+        footer .footer-copy {
+            flex: 1 1 auto; text-align: right;
+        }
+        @media (max-width: 900px) {
+            .header-content { flex-direction: column; gap: 0.7rem; text-align: center; }
+            .footer-content { flex-direction: column; gap: 0.7rem; text-align: center; }
+            .footer-copy { text-align: center !important; }
+            .rubriques, .personnes { flex-direction: column; gap: 1.3rem; }
+        }
+        @media (max-width: 540px) {
+            .header-content, .title-block h1, .hero h2 { font-size: 1.13rem; }
+            .hero p, section h2 { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a class="logo" aria-label="Accueil Projet Orion">
+                <img src="Orion1.png" alt="Logo Projet Orion"/>
+            </a>
+            <div class="title-block">
+                <h1>Blog du Projet Orion</h1>
+                <p>Innovation, passion, code et communauté • Suivez notre épopée !</p>
+            </div>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#annonces">Annonces</a></li>
+                <li><a href="#nouvelles">Nouvelles</a></li>
+                <li><a href="#timeline">Chronologie</a></li>
+                <li><a href="#personnes">L’équipe</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <h2>🚀 Bienvenue sur Orion !</h2>
+        <p>
+            Le blog qui propulse l'innovation informatique.<br>
+            Découvrez nos annonces, notre équipe et vivez l'aventure Orion.
+        </p>
+        <a href="#annonces" class="cta">Voir les annonces</a>
+    </section>
+    <section id="annonces">
+        <h2>Annonces officielles</h2>
+        <div class="annonces">
+            <div class="annonce">
+                <div class="annonce-title">✨ Nouvelle interface du blog !</div>
+                <div>
+                    Nous sommes fiers de présenter la V2 du blog Orion. Profitez d'une expérience immersive et moderne !
+                </div>
+            </div>
+            <div class="annonce">
+                <div class="annonce-title">Ouverture de Zeta AI, l’IA dédiée au projet</div>
+                <div>
+                    Découvrez Zeta AI, notre intelligence artificielle conçue pour Orion. Testez-la dès aujourd’hui !
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="nouvelles">
+        <h2>Les nouvelles du projet</h2>
+        <div class="rubriques">
+            <div class="rubrique">
+                <h3>Avancement</h3>
+                <ul>
+                    <li>Lancement de Zeta AI (phase de développement)</li>
+                    <li>Création de modules de formation en programmation</li>
+                    <li>Mise en place d’une plateforme de test utilisateurs (bientôt !)</li>
+                </ul>
+            </div>
+            <div class="rubrique">
+                <h3>Prochainement</h3>
+                <ul>
+                    <li>Plateforme de cours de programmation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="timeline">
+        <h2>Chronologie du projet</h2>
+        <div class="timeline">
+            <div class="timeline-event">
+                <span class="timeline-dot"></span>
+                <div class="timeline-date">Juillet 2025</div>
+                <h4>Blog Orion V2</h4>
+                <p>Refonte complète de l’interface et nouveau look pour la communauté.</p>
+            </div>
+            <div class="timeline-event">
+                <span class="timeline-dot"></span>
+                <div class="timeline-date">Mai 2025</div>
+                <h4>Zeta AI : premiers prototypes</h4>
+                <p>Début du développement de l’IA qui va révolutionner Orion.</p>
+            </div>
+            <div class="timeline-event">
+                <span class="timeline-dot"></span>
+                <div class="timeline-date">Mars 2025</div>
+                <h4>Équipe Orion réunie</h4>
+                <p>Des passionnés d’informatique unissent leurs talents pour créer le projet.</p>
+            </div>
+        </div>
+    </section>
+    <section id="personnes">
+        <h2>L’équipe Orion</h2>
+        <div class="personnes">
+            <div class="personne">
+                <img src="C++.png" alt="Adrien D">
+                <div><strong>Adrien D</strong></div>
+                <div>Développeur C++</div>
+            </div>
+            <div class="personne">
+                <img src="PY.png" alt="Adrien L">
+                <div><strong>Adrien L</strong></div>
+                <div>Python programming</div>
+            </div>
+            <div class="personne">
+                <img src="JS.png" alt="Nathan L">
+                <div><strong>Nathan L</strong></div>
+                <div>Développeur Front-End</div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="Orion1.png" alt="Logo Projet Orion" />
+                Projet Orion
+            </div>
+            <div class="footer-copy">
+                &copy; 2025 Projet Orion &mdash; Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
